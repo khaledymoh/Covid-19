@@ -20,7 +20,7 @@ Covid-19 Tracker is an open source android App for tracking coronavirus (Covid19
  [worldometers.info](https://www.worldometers.info/coronavirus/) The only data source
  
  # Demo:
- <img src="screenshots/screenshot_1.png" width="32%" /> <img src="screenshots/screenshot_2.png" width="32%" /> <img src="screenshots/screenshot_3.png" width="32%" /> <img src="screenshots/screenshot_4.png" width="32%" />
+ <img src="screenshots/screenshot_1.jpg" width="32%" /> <img src="screenshots/screenshot_2.jpg" width="32%" /> <img src="screenshots/screenshot_3.jpg" width="32%" /> <img src="screenshots/screenshot_4.jpg" width="32%" />
 
 ## Known Issues
 - Lag occurred while navigate to any fragment after data loaded successfully
