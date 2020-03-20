@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="label_overview_fragment_total_confirmed">Total Confirmed</string>
+    <string name="label_overview_fragment_total_recovered">Total Recovered</string>
+    <string name="label_overview_fragment_total_deaths">Total Deaths</string>
+    <string name="title_overview_fragment_covid19">COVID-19 CORONAVIRUS OUTBREAK</string>
+
+</resources>

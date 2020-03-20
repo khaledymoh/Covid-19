@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="country"
+            type="io.covid19.data.models.Country" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_row_country_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sans_regular"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="@{country.countryName}"
+                android:textColor="@color/black"
+                tools:text="China" />
+
+            <Space
+                android:layout_width="30dp"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/sans_regular"
+                android:gravity="center"
+                android:text="@{country.totalCases}"
+                android:textColor="@color/black"
+                tools:text="80,881" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="135dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sans_regular"
+                android:gravity="center"
+                android:text="@{country.newCases}"
+                android:background="@{!country.newCases.empty ? @color/colorLightYellow : 0}"
+                android:textColor="@color/black"
+                tools:text="+21" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/sans_regular"
+                android:gravity="center"
+                android:text='@{!country.totalDeaths.empty ? country.totalDeaths : "0"}'
+                android:textColor="@color/black"
+                tools:text="3,226" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="135dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/sans_regular"
+                android:gravity="center"
+                android:background="@{!country.newDeaths.empty ? @color/colorRed : 0}"
+                android:text="@{country.newDeaths}"
+                android:textColor="@color/white"
+                tools:text="+13" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/sans_regular"
+                android:gravity="center"
+                android:text='@{!country.totalRecovered.empty ? country.totalRecovered : "0"}'
+                android:textColor="@color/black"
+                tools:text="68,715" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/sans_regular"
+                android:gravity="center"
+                android:text='@{!country.activeCases.empty? country.activeCases : "0"}'
+                android:textColor="@color/black"
+                tools:text="8,940" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorDivider" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/sans_regular"
+                android:gravity="center"
+                android:text='@{!country.criticalCases.empty ? country.criticalCases : "0"}'
+                android:textColor="@color/black"
+                tools:text="3,226" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/white</color>
+    <color name="colorAccent">#77A5F6</color>
+
+    <color name="white">@android:color/white</color>
+    <color name="black">@android:color/black</color>
+
+    <color name="textDarkPrimary">#DE000000</color>
+    <color name="textDarkSecondary">#8A000000</color>
+    <color name="textDarkDisabled">#61000000</color>
+
+    <color name="textLightPrimary">#FFFFFF</color>
+    <color name="textLightSecondary">#B2FFFFFF</color>
+    <color name="textLightDisabled">#80FFFFFF</color>
+
+    <color name="colorDarkGray">#718096</color>
+    <color name="colorRed">#e53e3e</color>
+    <color name="colorGreen">#38a169</color>
+    <color name="colorPurple">#8080FF</color>
+    <color name="colorLightBlue">#3cf</color>
+    <color name="colorLightYellow">#F6DBB3</color>
+
+    <color name="colorDivider">#F1F1F1</color>
+    <color name="colorRowDivider">#F9F9F9</color>
+</resources>

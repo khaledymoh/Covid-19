@@ -1,0 +1,28 @@
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "io.covid19"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode Integer.parseInt(getProperty("app.versionCode"))
+        versionName getProperty("app.versionName")
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':data')
+    implementation project(':home')
+}

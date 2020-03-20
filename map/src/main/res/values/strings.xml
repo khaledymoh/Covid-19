@@ -1,0 +1,5 @@
+<resources>
+    <string name="label_map_fragment_confirmend">Confirmed</string>
+    <string name="label_map_fragment_recovered">Recovered</string>
+    <string name="label_map_fragment_deaths">Deaths</string>
+</resources>

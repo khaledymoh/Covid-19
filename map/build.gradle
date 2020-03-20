@@ -1,0 +1,6 @@
+dependencies {
+    implementation project(':core')
+    implementation project(':data')
+    implementation project(':statistics')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}

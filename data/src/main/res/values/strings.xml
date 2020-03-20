@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_no_connectivity_message">Looks like you are no longer connected to the Internet, reconnect and try again.</string>
+    <string name="error_unexpected_message">Something went wrong, please try again.</string>
+    <string name="error_timeout_message">Looks like the server is taking to long to respond, please try again</string>
+    <string name="error_client_message">Something went wrong with your request, please try again</string>
+    <string name="error_server_message">Issues in server side, and will be fixed as soon as possible</string>
+</resources>

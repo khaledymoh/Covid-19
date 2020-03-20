@@ -1,0 +1,9 @@
+dependencies {
+    implementation project(':core')
+    implementation project(':data')
+    api project(':statistics')
+    api project(':overview')
+    api project(':countries')
+    api project(':map')
+    api project(':analytics')
+}

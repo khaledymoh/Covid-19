@@ -1,0 +1,8 @@
+dependencies {
+
+    android {
+        buildTypes.all {
+            buildConfigField("String", "BASE_API_URL", "\"" + getProperty("app.base.api.url") + "\"")
+        }
+    }
+}
