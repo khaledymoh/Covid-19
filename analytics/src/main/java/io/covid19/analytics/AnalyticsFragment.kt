@@ -23,13 +23,6 @@ class AnalyticsFragment : BaseBindingFragment<FragmentAnalyticsBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         allStatisticsObserver()
-        initSwipeRefreshLayoutListener()
-    }
-
-    private fun initSwipeRefreshLayoutListener() {
-        binding?.swipeRefreshLayout?.setOnRefreshListener {
-            viewModel.executeRequestStatistics()
-        }
     }
 
     private fun allStatisticsObserver() {
@@ -60,7 +53,6 @@ class AnalyticsFragment : BaseBindingFragment<FragmentAnalyticsBinding>() {
         } else {
             binding?.progressBar.hide()
             binding?.linearLayoutContentContainer.show()
-            binding?.swipeRefreshLayout?.isRefreshing = false
         }
     }
 

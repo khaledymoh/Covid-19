@@ -13,6 +13,11 @@
         android:title="@string/title_home_bottom_navigation_menu_countries" />
 
     <item
+        android:id="@+id/home_bottom_navigation_empty"
+        android:enabled="false"
+        android:title="@string/title_home_bottom_navigation_menu_refresh" />
+
+    <item
         android:id="@+id/home_bottom_navigation_analytics"
         android:icon="@drawable/ic_home_bottom_navigation_analytics"
         android:title="@string/title_home_bottom_navigation_menu_analytics" />

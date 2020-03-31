@@ -61,8 +61,11 @@ class StatisticsWrapper(
         }?.toMutableList() ?: mutableListOf()
     }
 
-
     fun notEmptyCountries(): MutableList<Country> {
-        return countries?.filter { it.countryName != null }?.toMutableList() ?: mutableListOf()
+        return countries?.filter { it.countryName != null }
+            ?.sortedByDescending { it.totalCases?.replace(",", "")?.toLong() }
+            ?.filter { it.countryName != "Total:" }
+            ?.toMutableList()
+            ?: mutableListOf()
     }
 }

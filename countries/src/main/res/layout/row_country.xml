@@ -28,7 +28,7 @@
                 android:paddingTop="15dp"
                 android:paddingBottom="15dp"
                 android:text="@{country.countryName}"
-                android:textColor="@color/black"
+                android:textColor="@color/textPrimary"
                 tools:text="China" />
 
             <Space
@@ -47,7 +47,7 @@
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center"
                 android:text="@{country.totalCases}"
-                android:textColor="@color/black"
+                android:textColor="@color/textPrimary"
                 tools:text="80,881" />
 
             <View
@@ -77,7 +77,7 @@
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center"
                 android:text='@{!country.totalDeaths.empty ? country.totalDeaths : "0"}'
-                android:textColor="@color/black"
+                android:textColor="@color/textPrimary"
                 tools:text="3,226" />
 
             <View
@@ -107,7 +107,7 @@
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center"
                 android:text='@{!country.totalRecovered.empty ? country.totalRecovered : "0"}'
-                android:textColor="@color/black"
+                android:textColor="@color/textPrimary"
                 tools:text="68,715" />
 
             <View
@@ -122,7 +122,7 @@
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center"
                 android:text='@{!country.activeCases.empty? country.activeCases : "0"}'
-                android:textColor="@color/black"
+                android:textColor="@color/textPrimary"
                 tools:text="8,940" />
 
             <View
@@ -137,7 +137,7 @@
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center"
                 android:text='@{!country.criticalCases.empty ? country.criticalCases : "0"}'
-                android:textColor="@color/black"
+                android:textColor="@color/textPrimary"
                 tools:text="3,226" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>

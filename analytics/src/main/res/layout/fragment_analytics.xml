@@ -22,250 +22,169 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_refresh_layout"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ScrollView
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linear_layout_content_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="@{statistics == null ? View.GONE : View.VISIBLE}"
+                tools:visibility="visible">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/linear_layout_content_container"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="@{statistics == null ? View.GONE : View.VISIBLE}"
-                    tools:visibility="visible">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="15dp"
-                        app:cardElevation="0dp"
-                        app:strokeColor="@color/colorDivider"
-                        app:strokeWidth="1dp">
-
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingTop="25dp"
-                            android:paddingBottom="25dp">
-
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sans_regular"
-                                android:text="@string/label_analytics_fragment_active_cases"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
-
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sans_bold"
-                                android:text="@{statistics.activeCases}"
-                                android:textColor="@color/textDarkPrimary"
-                                android:textSize="32sp"
-                                tools:text="135,711" />
-
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sans_regular"
-                                android:text="@string/label_analytics_fragment_currently_infected_patients"
-                                android:textSize="12sp" />
-
-                            <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
-                                android:orientation="horizontal">
-
-                                <androidx.appcompat.widget.LinearLayoutCompat
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:gravity="center_horizontal"
-                                    android:orientation="vertical">
-
-                                    <com.google.android.material.textview.MaterialTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
-                                        android:fontFamily="@font/sans_regular"
-                                        android:text="@string/label_analytics_fragment_in_mild_condition" />
-
-                                    <androidx.appcompat.widget.LinearLayoutCompat
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <com.google.android.material.textview.MaterialTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:fontFamily="@font/sans_bold"
-                                            android:text="@{statistics.activeInMildCondition}"
-                                            android:textColor="@color/colorPurple"
-                                            android:textSize="26sp"
-                                            tools:text="135,711" />
-
-                                        <com.google.android.material.textview.MaterialTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginStart="5dp"
-                                            android:fontFamily="@font/sans_regular"
-                                            android:text="@{@string/label_analytics_fragment_percentage(statistics.activeInMildConditionPercentage)}"
-                                            android:textColor="@color/black"
-                                            tools:text="(95%)" />
-                                    </androidx.appcompat.widget.LinearLayoutCompat>
-                                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                                <View
-                                    android:layout_width="1dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginTop="15dp"
-                                    android:layout_marginBottom="15dp"
-                                    android:background="@color/colorDivider" />
-
-                                <androidx.appcompat.widget.LinearLayoutCompat
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:gravity="center_horizontal"
-                                    android:orientation="vertical">
-
-                                    <com.google.android.material.textview.MaterialTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
-                                        android:fontFamily="@font/sans_regular"
-                                        android:text="@string/label_analytics_fragment_serious_or_critical" />
-
-                                    <androidx.appcompat.widget.LinearLayoutCompat
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <com.google.android.material.textview.MaterialTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:fontFamily="@font/sans_bold"
-                                            android:text="@{statistics.activeCritical}"
-                                            android:textColor="@color/colorRed"
-                                            android:textSize="26sp"
-                                            tools:text="6,938" />
-
-                                        <com.google.android.material.textview.MaterialTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginStart="5dp"
-                                            android:fontFamily="@font/sans_regular"
-                                            android:text="@{@string/label_analytics_fragment_percentage(statistics.activeCriticalPercentage)}"
-                                            android:textColor="@color/black"
-                                            tools:text="(5%)" />
-                                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                                </androidx.appcompat.widget.LinearLayoutCompat>
-                            </androidx.appcompat.widget.LinearLayoutCompat>
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-                    </com.google.android.material.card.MaterialCardView>
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/colorDivider"
+                    app:strokeWidth="1dp">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp">
 
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="0dp"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/label_statistics_active_cases"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_bold"
+                            android:text="@{statistics.activeCases}"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="32sp"
+                            tools:text="135,711" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/label_statistics_currently_infected_patients"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_weight="1"
-                            app:cardElevation="0dp"
-                            app:strokeColor="@color/colorDivider"
-                            app:strokeWidth="1dp">
+                            android:orientation="horizontal">
 
                             <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
                                 android:gravity="center_horizontal"
-                                android:orientation="vertical"
-                                android:paddingTop="25dp"
-                                android:paddingBottom="25dp">
-
-                                <com.google.android.material.textview.MaterialTextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/sans_regular"
-                                    android:text="@string/label_analytics_fragment_new_cases"
-                                    android:textColor="@color/colorLightBlue"
-                                    android:textSize="16sp" />
+                                android:orientation="vertical">
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:fontFamily="@font/sans_bold"
-                                    android:text="@{statistics.newCases}"
-                                    android:textColor="@color/colorLightBlue"
-                                    android:textSize="32sp"
-                                    tools:text="77,236" />
-                            </androidx.appcompat.widget.LinearLayoutCompat>
-                        </com.google.android.material.card.MaterialCardView>
+                                    android:fontFamily="@font/sans_regular"
+                                    android:text="@string/label_statistics_in_mild_condition" />
 
-                        <com.google.android.material.card.MaterialCardView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginEnd="15dp"
-                            android:layout_weight="1"
-                            app:cardElevation="0dp"
-                            app:strokeColor="@color/colorDivider"
-                            app:strokeWidth="1dp">
-
-                            <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_horizontal"
-                                android:orientation="vertical"
-                                android:paddingTop="25dp"
-                                android:paddingBottom="25dp">
-
-                                <com.google.android.material.textview.MaterialTextView
+                                <androidx.appcompat.widget.LinearLayoutCompat
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:fontFamily="@font/sans_regular"
-                                    android:text="@string/label_analytics_fragment_new_deaths"
-                                    android:textColor="@color/colorAccent"
-                                    android:textSize="16sp" />
+                                    android:orientation="horizontal">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/sans_bold"
+                                        android:text="@{statistics.activeInMildCondition}"
+                                        android:textColor="@color/colorPurple"
+                                        android:textSize="26sp"
+                                        tools:text="135,711" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:fontFamily="@font/sans_regular"
+                                        android:text="@{@string/label_analytics_fragment_percentage(statistics.activeInMildConditionPercentage)}"
+                                        android:textColor="@color/textPrimary"
+                                        tools:text="(95%)" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp"
+                                android:background="@color/colorDivider" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
 
                                 <com.google.android.material.textview.MaterialTextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="8dp"
-                                    android:fontFamily="@font/sans_bold"
-                                    android:text="@{statistics.newDeaths}"
-                                    android:textColor="@color/colorAccent"
-                                    android:textSize="32sp"
-                                    tools:text="6,508" />
+                                    android:fontFamily="@font/sans_regular"
+                                    android:text="@string/label_statistics_serious_or_critical" />
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/sans_bold"
+                                        android:text="@{statistics.activeCritical}"
+                                        android:textColor="@color/colorRed"
+                                        android:textSize="26sp"
+                                        tools:text="6,938" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:fontFamily="@font/sans_regular"
+                                        android:text="@{@string/label_analytics_fragment_percentage(statistics.activeCriticalPercentage)}"
+                                        android:textColor="@color/textPrimary"
+                                        tools:text="(5%)" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
                             </androidx.appcompat.widget.LinearLayoutCompat>
-                        </com.google.android.material.card.MaterialCardView>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
                     </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginTop="15dp"
-                        android:layout_marginEnd="15dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@android:color/transparent"
                         app:cardElevation="0dp"
                         app:strokeColor="@color/colorDivider"
                         app:strokeWidth="1dp">
@@ -282,123 +201,202 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/sans_regular"
-                                android:text="@string/label_analytics_fragment_closed_cases"
-                                android:textColor="@color/black"
+                                android:text="@string/label_statistics_new_cases"
+                                android:textColor="@color/colorLightBlue"
                                 android:textSize="16sp" />
 
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
                                 android:fontFamily="@font/sans_bold"
-                                android:text="@{statistics.closedCases}"
-                                android:textColor="@color/textDarkPrimary"
+                                android:text="@{statistics.newCases}"
+                                android:textColor="@color/colorLightBlue"
                                 android:textSize="32sp"
-                                tools:text="97,439" />
+                                tools:text="77,236" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardElevation="0dp"
+                        app:strokeColor="@color/colorDivider"
+                        app:strokeWidth="1dp">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="25dp"
+                            android:paddingBottom="25dp">
 
                             <com.google.android.material.textview.MaterialTextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/sans_regular"
-                                android:text="@string/label_analytics_fragment_cases_which_had_an_outcome"
-                                android:textSize="12sp" />
+                                android:text="@string/label_statistics_new_deaths"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="16sp" />
 
-                            <androidx.appcompat.widget.LinearLayoutCompat
-                                android:layout_width="match_parent"
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
-                                android:orientation="horizontal">
-
-                                <androidx.appcompat.widget.LinearLayoutCompat
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:gravity="center_horizontal"
-                                    android:orientation="vertical">
-
-                                    <com.google.android.material.textview.MaterialTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
-                                        android:fontFamily="@font/sans_regular"
-                                        android:text="@string/label_analytics_fragment_recovered_discharged" />
-
-                                    <androidx.appcompat.widget.LinearLayoutCompat
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <com.google.android.material.textview.MaterialTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:fontFamily="@font/sans_bold"
-                                            android:text="@{statistics.closedRecovered}"
-                                            android:textColor="@color/colorGreen"
-                                            android:textSize="26sp"
-                                            tools:text="87,408" />
-
-                                        <com.google.android.material.textview.MaterialTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginStart="5dp"
-                                            android:fontFamily="@font/sans_regular"
-                                            android:text="@{@string/label_analytics_fragment_percentage(statistics.closedRecoveredPercentage)}"
-                                            android:textColor="@color/black"
-                                            tools:text="(90%)" />
-                                    </androidx.appcompat.widget.LinearLayoutCompat>
-                                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                                <View
-                                    android:layout_width="1dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginTop="15dp"
-                                    android:layout_marginBottom="15dp"
-                                    android:background="@color/colorDivider" />
-
-                                <androidx.appcompat.widget.LinearLayoutCompat
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:gravity="center_horizontal"
-                                    android:orientation="vertical">
-
-                                    <com.google.android.material.textview.MaterialTextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_marginTop="8dp"
-                                        android:fontFamily="@font/sans_regular"
-                                        android:text="@string/label_analytics_fragment_deaths" />
-
-                                    <androidx.appcompat.widget.LinearLayoutCompat
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:orientation="horizontal">
-
-                                        <com.google.android.material.textview.MaterialTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:fontFamily="@font/sans_bold"
-                                            android:text="@{statistics.closedDeaths}"
-                                            android:textColor="@color/colorDarkGray"
-                                            android:textSize="26sp"
-                                            tools:text="10,031" />
-
-                                        <com.google.android.material.textview.MaterialTextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginStart="5dp"
-                                            android:fontFamily="@font/sans_regular"
-                                            android:text="@{@string/label_analytics_fragment_percentage(statistics.closedDeathsPercentage)}"
-                                            android:textColor="@color/black"
-                                            tools:text="(10%)" />
-                                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                                </androidx.appcompat.widget.LinearLayoutCompat>
-                            </androidx.appcompat.widget.LinearLayoutCompat>
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/sans_bold"
+                                android:text="@{statistics.newDeaths}"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="32sp"
+                                tools:text="6,508" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
                     </com.google.android.material.card.MaterialCardView>
                 </androidx.appcompat.widget.LinearLayoutCompat>
-            </ScrollView>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/colorDivider"
+                    app:strokeWidth="1dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/label_statistics_closed_cases"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_bold"
+                            android:text="@{statistics.closedCases}"
+                            android:textColor="@color/textPrimary"
+                            android:textSize="32sp"
+                            tools:text="97,439" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/label_statistics_cases_which_had_an_outcome"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/sans_regular"
+                                    android:text="@string/label_statistics_recovered_discharged" />
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/sans_bold"
+                                        android:text="@{statistics.closedRecovered}"
+                                        android:textColor="@color/colorGreen"
+                                        android:textSize="26sp"
+                                        tools:text="87,408" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:fontFamily="@font/sans_regular"
+                                        android:text="@{@string/label_analytics_fragment_percentage(statistics.closedRecoveredPercentage)}"
+                                        android:textColor="@color/textPrimary"
+                                        tools:text="(90%)" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="15dp"
+                                android:background="@color/colorDivider" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:fontFamily="@font/sans_regular"
+                                    android:text="@string/label_statistics_deaths" />
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/sans_bold"
+                                        android:text="@{statistics.closedDeaths}"
+                                        android:textColor="@color/colorDarkGray"
+                                        android:textSize="26sp"
+                                        tools:text="10,031" />
+
+                                    <com.google.android.material.textview.MaterialTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="5dp"
+                                        android:fontFamily="@font/sans_regular"
+                                        android:text="@{@string/label_analytics_fragment_percentage(statistics.closedDeathsPercentage)}"
+                                        android:textColor="@color/textPrimary"
+                                        tools:text="(10%)" />
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
 
         <ProgressBar
             android:id="@+id/progress_bar"

@@ -7,5 +7,9 @@ fun View?.show() {
 }
 
 fun View?.hide() {
-    this?.visibility = View.INVISIBLE
+    this?.visibility = View.GONE
+}
+
+fun View?.padding(start: Int = 0, top: Int = 0, end: Int = 0, bottom: Int = 0) {
+    this?.setPaddingRelative(start, top, end, bottom)
 }

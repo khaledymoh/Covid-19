@@ -1,14 +1,4 @@
 <resources>
-
-    <string name="label_analytics_fragment_active_cases">Active Cases</string>
-    <string name="label_analytics_fragment_closed_cases">Closed Cases</string>
-    <string name="label_analytics_fragment_in_mild_condition">In Mild Condition</string>
-    <string name="label_analytics_fragment_recovered_discharged">Recovered</string>
-    <string name="label_analytics_fragment_serious_or_critical">Serious or Critical</string>
-    <string name="label_analytics_fragment_deaths">Deaths</string>
-    <string name="label_analytics_fragment_currently_infected_patients">Currently Infected Patients</string>
-    <string name="label_analytics_fragment_cases_which_had_an_outcome">Cases Which Had An Outcome</string>
-    <string name="label_analytics_fragment_new_cases">New Cases</string>
-    <string name="label_analytics_fragment_new_deaths">New Deaths</string>
     <string name="label_analytics_fragment_percentage">(%s\%%)</string>
+
 </resources>

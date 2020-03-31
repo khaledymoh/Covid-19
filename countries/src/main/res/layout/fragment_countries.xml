@@ -14,7 +14,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/viewBackground">
 
         <io.covid19.core.views.ErrorView
             android:id="@+id/error_view"
@@ -30,191 +31,152 @@
             android:indeterminateTint="@color/colorAccent"
             android:visibility="gone" />
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_refresh_layout"
-            android:layout_width="match_parent"
+        <HorizontalScrollView
+            android:id="@+id/horizontal_scroll_view_countries_fragment"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/linear_layout_content_container"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="@{statistics == null ? View.GONE : View.VISIBLE}">
+                android:orientation="vertical">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/TextInputLayoutStyle"
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorDivider" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:hint="@string/hint_countries_fragment_search">
+                    android:orientation="horizontal">
 
-                    <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/edit_text_countries_fragment_search"
-                        android:layout_width="match_parent"
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/sans_bold"
-                        android:inputType="text"
-                        android:singleLine="true"
-                        android:textColor="@color/black"
-                        android:textCursorDrawable="@null"
-                        android:textSize="18sp" />
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="@string/label_statistics_country_name"
+                        android:textColor="@color/textPrimary" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                    <Space
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content" />
 
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorDivider" />
 
-                <HorizontalScrollView
-                    android:id="@+id/horizontal_scroll_view_countries_fragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <androidx.appcompat.widget.LinearLayoutCompat
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:orientation="vertical">
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/sans_bold"
+                        android:gravity="center"
+                        android:text="@string/label_statistics_total_cases"
+                        android:textColor="@color/textPrimary" />
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/colorDivider" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorDivider" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:orientation="horizontal">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/sans_bold"
+                        android:gravity="center"
+                        android:text="@string/label_statistics_new_cases"
+                        android:textColor="@color/textPrimary" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sans_bold"
-                                android:paddingTop="15dp"
-                                android:paddingBottom="15dp"
-                                android:text="@string/label_countries_fragment_country_name"
-                                android:textColor="@color/black" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorDivider" />
 
-                            <Space
-                                android:layout_width="30dp"
-                                android:layout_height="wrap_content" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/sans_bold"
+                        android:gravity="center"
+                        android:text="@string/label_statistics_total_deaths"
+                        android:textColor="@color/textPrimary" />
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorDivider" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorDivider" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="15dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:gravity="center"
-                                android:text="@string/label_countries_fragment_total_cases"
-                                android:textColor="@color/black" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/sans_bold"
+                        android:gravity="center"
+                        android:text="@string/label_statistics_new_deaths"
+                        android:textColor="@color/textPrimary" />
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorDivider" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorDivider" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="15dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:gravity="center"
-                                android:text="@string/label_countries_fragment_new_cases"
-                                android:textColor="@color/black" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/sans_bold"
+                        android:gravity="center"
+                        android:text="@string/label_statistics_total_recovered"
+                        android:textColor="@color/textPrimary" />
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorDivider" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorDivider" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="15dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:gravity="center"
-                                android:text="@string/label_countries_fragment_total_deaths"
-                                android:textColor="@color/black" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/sans_bold"
+                        android:gravity="center"
+                        android:text="@string/label_statistics_active_cases"
+                        android:textColor="@color/textPrimary" />
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorDivider" />
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorDivider" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="15dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:gravity="center"
-                                android:text="@string/label_countries_fragment_new_deaths"
-                                android:textColor="@color/black" />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:fontFamily="@font/sans_bold"
+                        android:gravity="center"
+                        android:text="@string/label_statistics_critical_cases"
+                        android:textColor="@color/textPrimary" />
+                </LinearLayout>
 
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorDivider" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorDivider" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="15dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:gravity="center"
-                                android:text="@string/label_countries_fragment_total_recovered"
-                                android:textColor="@color/black" />
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorDivider" />
-
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="15dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:gravity="center"
-                                android:text="@string/label_countries_fragment_active_cases"
-                                android:textColor="@color/black" />
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="@color/colorDivider" />
-
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="15dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:gravity="center"
-                                android:text="@string/label_countries_fragment_critical_cases"
-                                android:textColor="@color/black" />
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/colorDivider" />
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recycler_view_countries"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                            tools:itemCount="5"
-                            tools:listitem="@layout/row_country" />
-                    </androidx.appcompat.widget.LinearLayoutCompat>
-
-                </HorizontalScrollView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_countries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/row_country" />
             </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </HorizontalScrollView>
     </FrameLayout>
 </layout>

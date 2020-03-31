@@ -8,15 +8,15 @@
     <color name="black">@android:color/black</color>
     <color name="dark">#2e2f33</color>
 
-    <color name="viewBackground">@color/white</color>
-    <color name="background">@color/white</color>
-    <color name="searchBackground">@color/white</color>
+    <color name="viewBackground">@color/dark</color>
+    <color name="background">#202125</color>
+    <color name="searchBackground">#4E4F55</color>
 
-    <color name="textPrimary">#DE000000</color>
-    <color name="textSecondary">#8A000000</color>
+
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#B2FFFFFF</color>
     <color name="textDarkDisabled">#61000000</color>
     <color name="textDarkSecondary">#8A000000</color>
-
 
     <color name="textLightPrimary">#FFFFFF</color>
     <color name="textLightSecondary">#B2FFFFFF</color>
@@ -29,6 +29,6 @@
     <color name="colorLightBlue">#3cf</color>
     <color name="colorLightYellow">#F6DBB3</color>
 
-    <color name="colorDivider">#F1F1F1</color>
-    <color name="colorRowDivider">#F9F9F9</color>
+    <color name="colorDivider">#515359</color>
+    <color name="colorRowDivider">#3F4045</color>
 </resources>

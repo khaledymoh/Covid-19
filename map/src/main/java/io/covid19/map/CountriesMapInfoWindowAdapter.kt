@@ -5,6 +5,7 @@ import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 import io.covid19.core.utils.toObject
 import io.covid19.data.models.Country
 import io.covid19.map.databinding.ViewCountriesMapInfoWindowBinding

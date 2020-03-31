@@ -3,39 +3,105 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_main_activity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/viewBackground"
+        app:elevation="0dp">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_main_activity"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.Toolbar"
-            app:title="@string/title_home_bottom_navigation_menu_overview"/>
+            android:animateLayoutChanges="true"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_main_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/AppTheme.Toolbar"
+                app:title="@string/title_home_bottom_navigation_menu_overview" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/searchBackground"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="3dp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/edit_text_countries_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="47dp"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/ic_home_search"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="@font/sans_regular"
+                    android:hint="@string/hint_search"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/textSecondary"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
-        android:id="@+id/frame_layout_main_navigation_container"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/home_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"
+        android:paddingBottom="60dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_home_activity"
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar_home_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/white"
-        android:theme="@style/Home.BottomNavigationView"
-        app:itemHorizontalTranslationEnabled="false"
-        app:itemIconTint="@color/color_home_bottom_nav_icon"
-        app:itemTextColor="@color/color_home_bottom_nav_text"
-        app:labelVisibilityMode="labeled"
-        app:menu="@menu/menu_home_bottom_navigation" />
+        android:background="@color/viewBackground"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"
+        app:fabAlignmentMode="center"
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:hideOnScroll="true"
+        app:layout_scrollFlags="scroll|enterAlways|snap">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation_home_activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            app:elevation="0dp"
+            app:itemHorizontalTranslationEnabled="false"
+            app:itemIconTint="@color/color_home_bottom_nav_icon"
+            app:itemTextAppearanceActive="@style/BottomNavigationTextStyle"
+            app:itemTextAppearanceInactive="@style/BottomNavigationTextStyle"
+            app:itemTextColor="@color/color_home_bottom_nav_text"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/menu_home_bottom_navigation" />
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/float_action_button_home_activity_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="normal"
+        app:layout_anchor="@id/bottom_app_bar_home_activity"
+        app:srcCompat="@drawable/ic_home_fab_refresh"
+        app:tint="@color/white" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

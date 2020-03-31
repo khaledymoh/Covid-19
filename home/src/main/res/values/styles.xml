@@ -3,4 +3,7 @@
     <style name="Home.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="android:fontFamily">@font/sans_regular</item>
     </style>
+    <style name="BottomNavigationTextStyle">
+        <item name="android:fontFamily">@font/sans_regular</item>
+    </style>
 </resources>

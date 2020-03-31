@@ -18,6 +18,7 @@ class StatisticsViewModel(
 
     private var statisticsResultLiveData = MutableLiveData<Result<StatisticsWrapper>>()
     private var statisticsWrapper: StatisticsWrapper? = null
+    private var searchLiveData = MutableLiveData("")
 
     fun executeRequestStatistics() {
         viewModelScope.launch {
@@ -70,6 +71,14 @@ class StatisticsViewModel(
 
     fun getCountry(countryName: String): Country {
         return getCountries().first { it.countryName == countryName }
+    }
+
+    fun searchQuery(query: String) {
+        searchLiveData.value = query
+    }
+
+    fun getSearchLiveData(): LiveData<String> {
+        return searchLiveData
     }
 
     private companion object {

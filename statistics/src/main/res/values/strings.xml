@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_statistics_active_cases">Active Cases</string>
+    <string name="label_statistics_closed_cases">Closed Cases</string>
+    <string name="label_statistics_in_mild_condition">In Mild Condition</string>
+    <string name="label_statistics_recovered_discharged">Recovered</string>
+    <string name="label_statistics_serious_or_critical">Serious or Critical</string>
+    <string name="label_statistics_deaths">Deaths</string>
+    <string name="label_statistics_currently_infected_patients">Currently Infected Patients</string>
+    <string name="label_statistics_cases_which_had_an_outcome">Cases Which Had An Outcome</string>
+    <string name="label_statistics_new_cases">New Cases</string>
+    <string name="label_statistics_new_deaths">New Deaths</string>
+
+    <string name="label_statistics_total_confirmed">Total Confirmed</string>
+    <string name="label_statistics_total_recovered">Total Recovered</string>
+    <string name="label_statistics_total_deaths">Total Deaths</string>
+
+    <string name="label_statistics_country_name">Country Name</string>
+    <string name="label_statistics_total_cases">Total Cases</string>
+    <string name="label_statistics_critical_cases">Critical Cases</string>
+</resources>

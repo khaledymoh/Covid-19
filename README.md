@@ -16,22 +16,25 @@ Covid-19 Tracker is an open source android App for tracking coronavirus (Covid19
 - Jspoon
 - Abdroid Architecture Component
 
-## Data Sources
- [worldometers.info](https://www.worldometers.info/coronavirus/) The only data source
- 
- # Demo:
+## Sources:
+> https://www.worldometers.info/coronavirus/
+
+## Demo:
  <img src="screenshots/screenshot_1.jpg" width="32%" /> <img src="screenshots/screenshot_2.jpg" width="32%" /> <img src="screenshots/screenshot_3.jpg" width="32%" /> <img src="screenshots/screenshot_4.jpg" width="32%" />
 
+### Dark Mode
+ <img src="screenshots/dark_screenshot_1.jpg" width="32%" /> <img src="screenshots/dark_screenshot_2.jpg" width="32%" /> <img src="dark_screenshots/dark_screenshot_3.jpg" width="32%" /> <img src="dark_screenshots/screenshot_4.jpg" width="32%" />
+
 ## Known Issues
-- Lag occurred while navigate to any fragment after data loaded successfully
-- Lifecycle
+- ~~Lag occurred while navigate to any fragment after data loaded successfully~~
+- ~~Lifecycle~~
 
 ## Not Implemented
 - Data source information screen and cases summary
 - Last updates screen
 - About screen contains open sources libraries
 - Support other languages and directions
-- Support Nigh Mode
+- ~~Support Nigh Mode~~
 - Unit Testing
 
 ## Contributing

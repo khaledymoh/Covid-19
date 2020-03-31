@@ -40,7 +40,7 @@ abstract class BaseAdapter<I, VH : BaseViewHolder<I>>(
 
     override fun onBindViewHolder(holder: VH, position: Int) {
 
-        initOnItemClickListener(holder, position)
+        initOnItemClickListener(holder, position, items)
 
         holder.bindItem(items[position], position)
     }
@@ -49,7 +49,7 @@ abstract class BaseAdapter<I, VH : BaseViewHolder<I>>(
         holder.bindItem(items.getOrNull(position), position)
     }
 
-    private fun initOnItemClickListener(holder: VH, position: Int) {
+    protected fun initOnItemClickListener(holder: VH, position: Int, items: MutableList<I>) {
         if (onItemClickListener != null) {
             holder.itemView.setOnClickListener {
                 onItemClickListener?.invoke(items[position], position)

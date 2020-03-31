@@ -39,7 +39,8 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center_horizontal"
-                android:text="@string/label_map_fragment_confirmend" />
+                android:text="@string/label_map_fragment_confirmend"
+                android:textColor="@color/textDarkSecondary" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="0dp"
@@ -47,7 +48,8 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center_horizontal"
-                android:text="@string/label_map_fragment_recovered" />
+                android:text="@string/label_map_fragment_recovered"
+                android:textColor="@color/textDarkSecondary" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="0dp"
@@ -55,7 +57,8 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center_horizontal"
-                android:text="@string/label_map_fragment_deaths" />
+                android:text="@string/label_map_fragment_deaths"
+                android:textColor="@color/textDarkSecondary" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat

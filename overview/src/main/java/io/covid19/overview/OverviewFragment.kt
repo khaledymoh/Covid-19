@@ -22,13 +22,6 @@ class OverviewFragment : BaseBindingFragment<FragmentOverviewBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         allStatisticsObserver()
-        initSwipeRefreshLayoutListener()
-    }
-
-    private fun initSwipeRefreshLayoutListener() {
-        binding?.swipeRefreshLayout?.setOnRefreshListener {
-            viewModel.executeRequestStatistics()
-        }
     }
 
     private fun allStatisticsObserver() {
@@ -59,7 +52,6 @@ class OverviewFragment : BaseBindingFragment<FragmentOverviewBinding>() {
         } else {
             binding?.progressBar.hide()
             binding?.linearLayoutContentContainer.show()
-            binding?.swipeRefreshLayout?.isRefreshing = false
         }
     }
 

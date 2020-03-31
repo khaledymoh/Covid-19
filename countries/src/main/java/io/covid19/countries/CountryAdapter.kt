@@ -26,6 +26,7 @@ class CountryAdapter : BaseAdapter<Country, CountryAdapter.CountryViewHolder>(),
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
         holder.bindItem(filteredCountries[position], position)
+        initOnItemClickListener(holder, position, filteredCountries)
     }
 
     override fun getItemCount() = filteredCountries.size
@@ -37,7 +38,9 @@ class CountryAdapter : BaseAdapter<Country, CountryAdapter.CountryViewHolder>(),
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             filteredCountries = if (constraint.toString().isNotEmpty()) {
                 items.filter {
-                    it.countryName?.toLowerCase()?.contains(constraint.toString().toLowerCase()) == true
+                    it.countryName?.toLowerCase()?.contains(
+                        constraint.toString().toLowerCase()
+                    ) == true
                 }.toMutableList()
             } else {
                 items
@@ -78,7 +81,7 @@ class CountryAdapter : BaseAdapter<Country, CountryAdapter.CountryViewHolder>(),
                 viewBinding.linearLayoutRowCountryContainer.setBackgroundColor(
                     ContextCompat.getColor(
                         context,
-                        R.color.white
+                        R.color.viewBackground
                     )
                 )
             }

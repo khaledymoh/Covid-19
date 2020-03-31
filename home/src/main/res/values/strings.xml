@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="hint_search">Search</string>
     <string name="title_home_bottom_navigation_menu_overview">Overview</string>
     <string name="title_home_bottom_navigation_menu_countries">Countries</string>
     <string name="title_home_bottom_navigation_menu_analytics">Analytics</string>
     <string name="title_home_bottom_navigation_menu_map">Map</string>
+    <string name="title_home_bottom_navigation_menu_refresh">Refresh</string>
 </resources>

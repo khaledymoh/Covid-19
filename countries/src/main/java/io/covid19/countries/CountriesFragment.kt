@@ -2,12 +2,12 @@ package io.covid19.countries
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.widget.doOnTextChanged
 import io.covid19.core.fragments.BaseBindingFragment
 import io.covid19.core.utils.hide
 import io.covid19.core.utils.observe
 import io.covid19.core.utils.show
 import io.covid19.countries.databinding.FragmentCountriesBinding
+import io.covid19.countries.details.CountryDetailsBottomSheet
 import io.covid19.data.models.StatisticsWrapper
 import io.covid19.data.network.Result
 import io.covid19.statistics.StatisticsViewModel
@@ -27,18 +27,19 @@ class CountriesFragment : BaseBindingFragment<FragmentCountriesBinding>() {
         super.onViewCreated(view, savedInstanceState)
         setupCountriesRecyclerViewAdapter()
         statisticsObserver()
-        initSearchEditText()
-        initSwipeRefreshLayoutListener()
-    }
-
-    private fun initSwipeRefreshLayoutListener() {
-        binding?.swipeRefreshLayout?.setOnRefreshListener {
-            viewModel.executeRequestStatistics()
-        }
+        initSearchViewObserver()
     }
 
     private fun setupCountriesRecyclerViewAdapter() {
         binding?.recyclerViewCountries?.adapter = countryAdapter
+        countryAdapter.setOnItemClickListener { item, _ ->
+            item?.let {
+                CountryDetailsBottomSheet(it).show(
+                    childFragmentManager,
+                    this::class.java.simpleName
+                )
+            }
+        }
     }
 
     private fun statisticsObserver() {
@@ -67,25 +68,24 @@ class CountriesFragment : BaseBindingFragment<FragmentCountriesBinding>() {
         if (loading.show) {
             binding?.errorView?.hide()
             binding?.progressBar.show()
-            binding?.linearLayoutContentContainer.hide()
+            binding?.horizontalScrollViewCountriesFragment.hide()
         } else {
             binding?.progressBar.hide()
-            binding?.linearLayoutContentContainer.show()
-            binding?.swipeRefreshLayout?.isRefreshing = false
+            binding?.horizontalScrollViewCountriesFragment.show()
         }
     }
 
     private fun handelStatisticsError(error: Result.Error<*>) {
-        binding?.linearLayoutContentContainer.hide()
+        binding?.horizontalScrollViewCountriesFragment.hide()
         binding?.errorView?.errorMessage(error.error.messageResource)
         binding?.errorView?.setOnRetryClickListener {
             viewModel.executeRequestStatistics()
         }
     }
 
-    private fun initSearchEditText() {
-        binding?.editTextCountriesFragmentSearch?.doOnTextChanged { text, _, _, _ ->
-            countryAdapter.filter.filter(text)
+    private fun initSearchViewObserver() {
+        viewModel.getSearchLiveData().observe(viewLifecycleOwner) {
+            countryAdapter.filter.filter(it)
         }
     }
 }

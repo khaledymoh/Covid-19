@@ -14,160 +14,137 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/swipe_refresh_layout"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ScrollView
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/linear_layout_content_container"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:id="@+id/linear_layout_content_container"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone"
-                    tools:visibility="visible">
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/colorDivider"
+                    app:strokeWidth="1dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="15dp"
-                        android:fontFamily="@font/sans_regular"
-                        android:text="@string/title_overview_fragment_covid19"
-                        android:textColor="@color/black"
-                        android:textSize="16sp" />
-
-                    <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/sans_regular"
-                        android:text="@{statistics.lastUpdate}"
-                        android:textSize="12sp"
-                        tools:text="Last updated: March 17, 2020, 15:54 GMT" />
-
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="15dp"
-                        app:cardElevation="0dp"
-                        app:strokeColor="@color/colorDivider"
-                        app:strokeWidth="1dp">
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp">
 
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingTop="25dp"
-                            android:paddingBottom="25dp">
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/label_statistics_total_confirmed"
+                            android:textColor="@color/colorRed"
+                            android:textSize="16sp" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sans_regular"
-                                android:text="@string/label_overview_fragment_total_confirmed"
-                                android:textColor="@color/colorRed"
-                                android:textSize="16sp" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/sans_bold"
+                            android:text="@{statistics.counter.get(0).type}"
+                            android:textColor="@color/colorRed"
+                            android:textSize="32sp"
+                            tools:text="168,976" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:text="@{statistics.counter.get(0).type}"
-                                android:textColor="@color/colorRed"
-                                android:textSize="32sp"
-                                tools:text="168,976" />
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-                    </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/colorDivider"
+                    app:strokeWidth="1dp">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="8dp"
-                        app:cardElevation="0dp"
-                        app:strokeColor="@color/colorDivider"
-                        app:strokeWidth="1dp">
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp">
 
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingTop="25dp"
-                            android:paddingBottom="25dp">
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/label_statistics_total_recovered"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="16sp" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sans_regular"
-                                android:text="@string/label_overview_fragment_total_recovered"
-                                android:textColor="@color/colorGreen"
-                                android:textSize="16sp" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/sans_bold"
+                            android:text="@{statistics.counter.get(2).type}"
+                            android:textColor="@color/colorGreen"
+                            android:textSize="32sp"
+                            tools:text="77,236" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:text="@{statistics.counter.get(2).type}"
-                                android:textColor="@color/colorGreen"
-                                android:textSize="32sp"
-                                tools:text="77,236" />
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-                    </com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/colorDivider"
+                    app:strokeWidth="1dp">
 
-                    <com.google.android.material.card.MaterialCardView
+                    <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginEnd="15dp"
-                        app:cardElevation="0dp"
-                        app:strokeColor="@color/colorDivider"
-                        app:strokeWidth="1dp">
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="25dp">
 
-                        <androidx.appcompat.widget.LinearLayoutCompat
-                            android:layout_width="match_parent"
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical"
-                            android:paddingTop="25dp"
-                            android:paddingBottom="25dp">
+                            android:fontFamily="@font/sans_regular"
+                            android:text="@string/label_statistics_total_deaths"
+                            android:textColor="@color/colorDarkGray"
+                            android:textSize="16sp" />
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/sans_regular"
-                                android:text="@string/label_overview_fragment_total_deaths"
-                                android:textColor="@color/colorDarkGray"
-                                android:textSize="16sp" />
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/sans_bold"
+                            android:text="@{statistics.counter.get(1).type}"
+                            android:textColor="@color/colorDarkGray"
+                            android:textSize="32sp"
+                            tools:text="168,976" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
 
-                            <com.google.android.material.textview.MaterialTextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/sans_bold"
-                                android:text="@{statistics.counter.get(1).type}"
-                                android:textColor="@color/colorDarkGray"
-                                android:textSize="32sp"
-                                tools:text="168,976" />
-                        </androidx.appcompat.widget.LinearLayoutCompat>
-                    </com.google.android.material.card.MaterialCardView>
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-            </ScrollView>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </ScrollView>
 
         <io.covid19.core.views.ErrorView
             android:id="@+id/error_view"
