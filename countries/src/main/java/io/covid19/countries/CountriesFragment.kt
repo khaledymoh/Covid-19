@@ -2,10 +2,12 @@ package io.covid19.countries
 
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
+import com.google.android.material.textview.MaterialTextView
 import io.covid19.core.fragments.BaseBindingFragment
-import io.covid19.core.utils.hide
-import io.covid19.core.utils.observe
-import io.covid19.core.utils.show
+import io.covid19.core.utils.*
 import io.covid19.countries.databinding.FragmentCountriesBinding
 import io.covid19.countries.details.CountryDetailsBottomSheet
 import io.covid19.data.models.StatisticsWrapper
@@ -23,11 +25,22 @@ class CountriesFragment : BaseBindingFragment<FragmentCountriesBinding>() {
     @Inject
     lateinit var countryAdapter: CountryAdapter
 
+    private var headerIcons = mutableListOf<AppCompatImageView>()
+
+    private val tableHeaderTextsClickListener = View.OnClickListener { view ->
+        view?.tag?.let { tag ->
+            countryAdapter.sortByTag(tag.toString())
+            resetHeaderIcons()
+            applySelectionTo(tag.toString())
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupCountriesRecyclerViewAdapter()
         statisticsObserver()
         initSearchViewObserver()
+        findHeaderIcons(view as ViewGroup)
     }
 
     private fun setupCountriesRecyclerViewAdapter() {
@@ -55,6 +68,13 @@ class CountriesFragment : BaseBindingFragment<FragmentCountriesBinding>() {
                     handelStatisticsError(result)
                 }
             }
+        }
+    }
+
+    private fun resetHeaderIcons() {
+        headerIcons.forEach {
+            it.setTint(R.color.textSecondary)
+            it.smoothRotate(0f)
         }
     }
 
@@ -87,5 +107,28 @@ class CountriesFragment : BaseBindingFragment<FragmentCountriesBinding>() {
         viewModel.getSearchLiveData().observe(viewLifecycleOwner) {
             countryAdapter.filter.filter(it)
         }
+    }
+
+    private fun applySelectionTo(tag: String) {
+        headerIcons.first { it.tag?.toString() == tag }.apply {
+            setTint(R.color.colorAccent)
+            smoothRotate(if (CountriesItemsFactory.isRotated) ROTATION_DEGREE else DEFAULT_ROTATION_DEGREE)
+        }
+    }
+
+    private fun findHeaderIcons(viewGroup: ViewGroup) {
+        for (i in 0 until viewGroup.childCount) {
+            when (val v = viewGroup.getChildAt(i)) {
+                is ViewGroup -> findHeaderIcons(v)
+                is AppCompatImageView -> headerIcons.add(v)
+                is MaterialTextView -> v.setOnClickListener(tableHeaderTextsClickListener)
+            }
+        }
+    }
+
+    private companion object {
+
+        private const val DEFAULT_ROTATION_DEGREE = 0f
+        private const val ROTATION_DEGREE = 180f
     }
 }

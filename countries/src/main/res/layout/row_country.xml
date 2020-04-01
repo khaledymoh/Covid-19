@@ -41,7 +41,7 @@
                 android:background="@color/colorDivider" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="120dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:fontFamily="@font/sans_regular"
@@ -56,7 +56,7 @@
                 android:background="@color/colorDivider" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="135dp"
+                android:layout_width="170dp"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center"
@@ -71,7 +71,7 @@
                 android:background="@color/colorDivider" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="120dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:fontFamily="@font/sans_regular"
@@ -86,7 +86,7 @@
                 android:background="@color/colorDivider" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="135dp"
+                android:layout_width="170dp"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/sans_regular"
                 android:gravity="center"
@@ -101,7 +101,7 @@
                 android:background="@color/colorDivider" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="120dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:fontFamily="@font/sans_regular"
@@ -116,7 +116,7 @@
                 android:background="@color/colorDivider" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="120dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:fontFamily="@font/sans_regular"
@@ -131,7 +131,7 @@
                 android:background="@color/colorDivider" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:layout_width="120dp"
+                android:layout_width="155dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:fontFamily="@font/sans_regular"

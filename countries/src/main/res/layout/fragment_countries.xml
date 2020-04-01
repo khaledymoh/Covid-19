@@ -71,97 +71,200 @@
                         android:background="@color/colorDivider" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:id="@+id/text_view_countries_fragment_total_cases"
+                        android:layout_width="138dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:fontFamily="@font/sans_bold"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:tag="@string/label_statistics_total_cases"
                         android:text="@string/label_statistics_total_cases"
                         android:textColor="@color/textPrimary" />
 
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:tint="@color/colorAccent"
+                        android:src="@drawable/ic_countries_fragment_sort"
+                        android:tag="@string/label_statistics_total_cases" />
+
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorDivider" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:id="@+id/text_view_countries_fragment_new_cases"
+                        android:layout_width="138dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:fontFamily="@font/sans_bold"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:tag="@string/label_statistics_new_cases"
                         android:text="@string/label_statistics_new_cases"
                         android:textColor="@color/textPrimary" />
 
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_countries_fragment_sort"
+                        android:tag="@string/label_statistics_new_cases" />
+
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorDivider" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:id="@+id/text_view_countries_fragment_total_deaths"
+                        android:layout_width="138dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:fontFamily="@font/sans_bold"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:tag="@string/label_statistics_total_deaths"
                         android:text="@string/label_statistics_total_deaths"
                         android:textColor="@color/textPrimary" />
 
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_countries_fragment_sort"
+                        android:tag="@string/label_statistics_total_deaths" />
+
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorDivider" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:id="@+id/text_view_countries_fragment_new_deaths"
+                        android:layout_width="138dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:fontFamily="@font/sans_bold"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:tag="@string/label_statistics_new_deaths"
                         android:text="@string/label_statistics_new_deaths"
                         android:textColor="@color/textPrimary" />
 
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_countries_fragment_sort"
+                        android:tag="@string/label_statistics_new_deaths" />
+
+
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorDivider" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:id="@+id/text_view_countries_fragment_total_recovered"
+                        android:layout_width="138dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:fontFamily="@font/sans_bold"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:tag="@string/label_statistics_total_recovered"
                         android:text="@string/label_statistics_total_recovered"
                         android:textColor="@color/textPrimary" />
 
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_countries_fragment_sort"
+                        android:tag="@string/label_statistics_total_recovered" />
+
+
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorDivider" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:id="@+id/text_view_countries_fragment_active_cases"
+                        android:layout_width="138dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:fontFamily="@font/sans_bold"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:tag="@string/label_statistics_active_cases"
                         android:text="@string/label_statistics_active_cases"
                         android:textColor="@color/textPrimary" />
 
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_countries_fragment_sort"
+                        android:tag="@string/label_statistics_active_cases" />
+
+
                     <View
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:background="@color/colorDivider" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:id="@+id/text_view_countries_fragment_critical_cases"
+                        android:layout_width="138dp"
+                        android:layout_height="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:fontFamily="@font/sans_bold"
-                        android:gravity="center"
+                        android:gravity="center_vertical"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="10dp"
+                        android:tag="@string/label_statistics_critical_cases"
                         android:text="@string/label_statistics_critical_cases"
                         android:textColor="@color/textPrimary" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/ic_countries_fragment_sort"
+                        android:tag="@string/label_statistics_critical_cases" />
+
                 </LinearLayout>
 
                 <View

@@ -7,6 +7,8 @@ import android.widget.Filterable
 import androidx.core.content.ContextCompat
 import io.covid19.core.adapters.BaseAdapter
 import io.covid19.core.adapters.BaseBindingViewHolder
+import io.covid19.core.utils.toJustInt
+import io.covid19.countries.CountriesItemsFactory.getSortedItems
 import io.covid19.countries.databinding.RowCountryBinding
 import io.covid19.data.models.Country
 
@@ -32,6 +34,11 @@ class CountryAdapter : BaseAdapter<Country, CountryAdapter.CountryViewHolder>(),
     override fun getItemCount() = filteredCountries.size
 
     override fun getFilter() = CountryFilter()
+
+    fun sortByTag(tag: String) {
+        filteredCountries = getSortedItems(context, tag, filteredCountries)
+        notifyDataSetChanged()
+    }
 
     inner class CountryFilter : Filter() {
 
