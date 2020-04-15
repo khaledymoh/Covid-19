@@ -10,12 +10,14 @@ import androidx.databinding.ViewDataBinding
 abstract class BaseBindingFragment<T : ViewDataBinding> : BaseFragment() {
 
     protected var binding: T? = null
+    protected var container: ViewGroup? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        this.container = container
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         return binding?.root
     }

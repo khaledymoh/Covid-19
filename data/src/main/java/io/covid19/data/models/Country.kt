@@ -26,5 +26,8 @@ data class Country(
     var activeCases: String? = null,
 
     @Selector("td:nth-child(8)")
-    var criticalCases: String? = null
+    var criticalCases: String? = null,
+
+    @Selector("td:nth-child(13)")
+    var continentName: String? = null
 )

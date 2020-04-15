@@ -50,7 +50,10 @@ class StatisticsWrapper(
     var closedDeathsPercentage: String? = null,
 
     @Selector("#main_table_countries_today tr")
-    var countries: MutableList<Country>? = null
+    var countries: MutableList<Country>? = null,
+
+    @Selector("body > div.container > div:nth-child(3) > div > p:nth-child(2)")
+    var affectedCountriesTitle: String? = null
 ) {
 
     fun countriesNames(): MutableList<String> {
@@ -61,11 +64,28 @@ class StatisticsWrapper(
         }?.toMutableList() ?: mutableListOf()
     }
 
-    fun notEmptyCountries(): MutableList<Country> {
-        return countries?.filter { it.countryName != null }
+    fun excludedCountries(): MutableList<Country> {
+        return countries?.asSequence()
+            ?.filter { it.countryName != null }
             ?.sortedByDescending { it.totalCases?.replace(",", "")?.toLong() }
+            ?.filter { it.countryName !in continents }
             ?.filter { it.countryName != "Total:" }
             ?.toMutableList()
             ?: mutableListOf()
     }
+
+    val affectedCountriesTitleHint: String?
+        get() = affectedCountriesTitle?.substring(0, affectedCountriesTitle?.indexOf(".") ?: 0)
+
+    val continents: MutableList<String>
+        get() = mutableListOf(
+            "World",
+            "Europe",
+            "North America",
+            "Asia",
+            "South America",
+            "Africa",
+            "Oceania"
+        )
+
 }

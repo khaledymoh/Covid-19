@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ChipTextTextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/textSecondary</item>
+        <item name="android:fontFamily">@font/sans_regular</item>
+    </style>
+
+    <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textAppearance">@style/ChipTextTextAppearance</item>
+        <item name="chipBackgroundColor">@color/color_continent_chip_background</item>
+
+    </style>
+</resources>

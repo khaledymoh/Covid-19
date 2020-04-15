@@ -7,14 +7,15 @@ import android.widget.Filterable
 import androidx.core.content.ContextCompat
 import io.covid19.core.adapters.BaseAdapter
 import io.covid19.core.adapters.BaseBindingViewHolder
-import io.covid19.core.utils.toJustInt
 import io.covid19.countries.CountriesItemsFactory.getSortedItems
 import io.covid19.countries.databinding.RowCountryBinding
+import io.covid19.data.enums.CountryFilterType
 import io.covid19.data.models.Country
 
 class CountryAdapter : BaseAdapter<Country, CountryAdapter.CountryViewHolder>(), Filterable {
 
     private var filteredCountries = items
+    private var countryFilterType = CountryFilterType.COUNTRY
 
     override fun getViewHolder(parent: ViewGroup, viewType: Int): CountryViewHolder {
         return CountryViewHolder(
@@ -35,6 +36,11 @@ class CountryAdapter : BaseAdapter<Country, CountryAdapter.CountryViewHolder>(),
 
     override fun getFilter() = CountryFilter()
 
+    fun filterBy(countryFilterType: CountryFilterType, constraint: String) {
+        this.countryFilterType = countryFilterType
+        this.filter.filter(constraint)
+    }
+
     fun sortByTag(tag: String) {
         filteredCountries = getSortedItems(context, tag, filteredCountries)
         notifyDataSetChanged()
@@ -45,9 +51,15 @@ class CountryAdapter : BaseAdapter<Country, CountryAdapter.CountryViewHolder>(),
         override fun performFiltering(constraint: CharSequence?): FilterResults {
             filteredCountries = if (constraint.toString().isNotEmpty()) {
                 items.filter {
-                    it.countryName?.toLowerCase()?.contains(
-                        constraint.toString().toLowerCase()
-                    ) == true
+                    if (countryFilterType == CountryFilterType.COUNTRY) {
+                        it.countryName?.toLowerCase()?.contains(
+                            constraint.toString().toLowerCase()
+                        ) == true
+                    }else {
+                        it.continentName?.toLowerCase()?.contains(
+                            constraint.toString().toLowerCase()
+                        ) == true
+                    }
                 }.toMutableList()
             } else {
                 items

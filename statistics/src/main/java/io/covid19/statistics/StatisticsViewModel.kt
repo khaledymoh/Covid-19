@@ -50,7 +50,7 @@ class StatisticsViewModel(
     fun getTotalCasesByPercentage(country: Country): Int {
         val totalCases = country.totalCases?.replace(",", "")?.toInt()
         return if (totalCases != null) {
-            val iconSize = (totalCases * 0.5 / 100).toInt()
+            val iconSize = (totalCases * 0.05 / 100).toInt()
             if (iconSize > DEFAULT_TOTAL_CASES_BY_PERCENTAGE) {
                 iconSize
             } else {
@@ -63,6 +63,10 @@ class StatisticsViewModel(
 
     fun getStatisticsLiveData(): LiveData<Result<StatisticsWrapper>> {
         return statisticsResultLiveData
+    }
+
+    fun getStatisticsWrapper(): StatisticsWrapper {
+        return statisticsWrapper ?: StatisticsWrapper()
     }
 
     fun getCountries(): List<Country> {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.SplashScreen">
+        <item name="android:windowBackground">@drawable/bg_splash_activity_window</item>
+    </style>
+</resources>
