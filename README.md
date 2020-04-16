@@ -20,10 +20,10 @@ Covid-19 Tracker is an open source android App for tracking coronavirus (Covid19
 > https://www.worldometers.info/coronavirus/
 
 ## Demo:
- <img src="screenshots/screenshot_1.jpg" width="20%" /> <img src="screenshots/screenshot_2.jpg" width="20%" />  <img src="screenshots/screenshot_3.jpg" width="20%" /> <img src="screenshots/screenshot_4.jpg" width="20%" /> <img src="screenshots/screenshot_5.jpg" width="20%" />
+ <img src="screenshots/screenshot_1.jpg" width="15%" /> <img src="screenshots/screenshot_2.jpg" width="15%" />  <img src="screenshots/screenshot_3.jpg" width="15%" /> <img src="screenshots/screenshot_4.jpg" width="15%" /> <img src="screenshots/screenshot_5.jpg" width="15%" />
 
 ### Dark Mode
- <img src="screenshots/dark_screenshot_1.jpg" width="20%" /> <img src="screenshots/dark_screenshot_2.jpg" width="20%" /> <img src="screenshots/dark_screenshot_3.jpg" width="20%" /> <img src="screenshots/dark_screenshot_4.jpg" width="20%" /> <img src="screenshots/dark_screenshot_5.jpg" width="20%" />
+ <img src="screenshots/dark_screenshot_1.jpg" width="15%" /> <img src="screenshots/dark_screenshot_2.jpg" width="15%" /> <img src="screenshots/dark_screenshot_3.jpg" width="15%" /> <img src="screenshots/dark_screenshot_4.jpg" width="15%" /> <img src="screenshots/dark_screenshot_5.jpg" width="15%" />
 
 ## Known Issues
 - ~~Lag occurred while navigate to any fragment after data loaded successfully~~
