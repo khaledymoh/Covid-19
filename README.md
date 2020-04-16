@@ -2,6 +2,8 @@
 
 Covid-19 Tracker is an open source android App for tracking coronavirus (Covid19 / 19nCov) cases in the World.
 
+<img src="screenshots/download_button.png" width="15%" />
+
 ## Libraries, Languages and Concepts
 - Kotlin
 - Modularization
