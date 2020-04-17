@@ -16,7 +16,7 @@ Covid-19 Tracker is an open source android App for tracking coronavirus (Covid19
 - Dagger 2
 - Google Maps
 - Jspoon
-- Abdroid Architecture Component
+- Android Architecture Component
 
 ## Sources:
 > https://www.worldometers.info/coronavirus/
