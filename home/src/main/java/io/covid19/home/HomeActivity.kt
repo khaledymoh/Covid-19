@@ -4,15 +4,15 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
-import io.covid19.core.activities.BaseActivity
 import io.covid19.core.utils.hide
 import io.covid19.core.utils.padding
 import io.covid19.core.utils.show
 import io.covid19.home.databinding.ActivityHomeBinding
 import io.covid19.statistics.StatisticsViewModel
+import io.covid19.update.release.ReleaseAwareActivity
 import javax.inject.Inject
 
-class HomeActivity : BaseActivity() {
+class HomeActivity : ReleaseAwareActivity() {
 
     @Inject
     lateinit var viewModule: StatisticsViewModel
@@ -88,7 +88,6 @@ class HomeActivity : BaseActivity() {
         binding?.toolbarMainActivity?.show()
         supportActionBar?.title = toolbarTitle
     }
-
 
     private fun initSearchEditText() {
         binding?.editTextCountriesSearch?.doOnTextChanged { text, _, _, _ ->

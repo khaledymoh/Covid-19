@@ -23,4 +23,11 @@ object Activities {
 
         override val action: String = "io.covid19.home.HomeActivity"
     }
+
+    object Update : AddressableActivity {
+
+        override val action: String = "io.covid19.update.UpdateActivity"
+
+        const val RELEASE_CONFIG_EXTRA = "releaseConfigExtra"
+    }
 }

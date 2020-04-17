@@ -7,7 +7,9 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import pl.droidsonroids.retrofit2.JspoonConverterFactory
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -16,10 +18,23 @@ object NetworkModule {
     @JvmStatic
     @Singleton
     @Provides
+    @Named(RETROFIT_WORLDOMETERS_NAME)
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_API_URL)
+            .baseUrl(BuildConfig.WORLDOMETERS_BASE_API_URL)
             .addConverterFactory(JspoonConverterFactory.create())
+            .client(okHttpClient)
+            .build()
+    }
+
+    @JvmStatic
+    @Singleton
+    @Provides
+    @Named(RETROFIT_GITHUB_RAW_NAME)
+    fun provideGithubRetrofit(okHttpClient: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(BuildConfig.GITHUB_RAW_BASE_API_URL)
+            .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
     }
@@ -48,4 +63,6 @@ object NetworkModule {
     }
 
     private const val TIMEOUT = 30L
+    const val RETROFIT_WORLDOMETERS_NAME = "WORLDOMETERS"
+    const val RETROFIT_GITHUB_RAW_NAME = "GITHUB_RAW"
 }

@@ -2,7 +2,9 @@ dependencies {
 
     android {
         buildTypes.all {
-            buildConfigField("String", "BASE_API_URL", "\"" + getProperty("app.base.api.url") + "\"")
+            buildConfigField("String", "WORLDOMETERS_BASE_API_URL", "\"" + getProperty("app.worldometers.base.api.url") + "\"")
+            buildConfigField("String", "GITHUB_RAW_BASE_API_URL", "\"" + getProperty("app.github.raw.base.api.url") + "\"")
+            buildConfigField("String", "CURRENT_APPLICATION_ID", "\"" + getProperty("app.applicationId") + "\"")
         }
     }
 }
