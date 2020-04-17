@@ -9,6 +9,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import io.covid19.update.UpdateModule
 import javax.inject.Singleton
 
 @Singleton

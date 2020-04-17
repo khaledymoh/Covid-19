@@ -1,0 +1,7 @@
+<resources>
+    <string name="title_download_manager_downloading_covid_19">Covid-19 new version</string>
+    <string name="description_download_manager_downloading">Downloading…</string>
+    <string name="title_update_dialog_new_update">New Update Available %s</string>
+    <string name="button_update_dialog_update">Update</string>
+    <string name="button_update_dialog_ignore">Ignore</string>
+</resources>

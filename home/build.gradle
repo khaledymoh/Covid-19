@@ -1,6 +1,7 @@
 dependencies {
     implementation project(':core')
     implementation project(':data')
+    implementation project(':update')
     api project(':statistics')
     api project(':overview')
     api project(':countries')

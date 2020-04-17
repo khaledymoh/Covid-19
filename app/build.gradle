@@ -26,4 +26,5 @@ dependencies {
     implementation project(':data')
     implementation project(':home')
     implementation project(':splash')
+    implementation project(':update')
 }

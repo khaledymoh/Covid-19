@@ -43,4 +43,8 @@ dependencies {
     //For Map
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
+    //For android permissions
+    implementation "org.permissionsdispatcher:permissionsdispatcher:4.7.0"
+    kapt "org.permissionsdispatcher:permissionsdispatcher-processor:4.7.0"
+
 }

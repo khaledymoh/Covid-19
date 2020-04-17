@@ -15,7 +15,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-
+        maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
     }
 }
 
@@ -35,6 +35,14 @@ subprojects {
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_8
             targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+        defaultConfig {
+            minSdkVersion 21
+            targetSdkVersion 29
+
+            versionCode Integer.parseInt(getProperty("app.versionCode"))
+            versionName getProperty("app.versionName")
         }
 
         kotlinOptions {
