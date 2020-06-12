@@ -2,7 +2,7 @@
 
 Covid-19 Tracker is an open source android App for tracking coronavirus (Covid19 / 19nCov) cases in the World.
 
-##Please Note, This project is no longer being maintained 
+## Please Note, This project is no longer being maintained 
 
 <a href="https://github.com/khaledymoh/Covid-19/releases/download/v1.3.0/covid-19_1.3.0.apk"><img src="screenshots/download_button.png" width="32%" /></a>
 
